@@ -22,7 +22,7 @@ No matter if you are using the sample app or one of your own, you'll need to hav
 
 Once you've generated the certificates, upload them to your Sinch dashboard for the application you're working with. All three push notifications certificate types are supported:
 
-![Certificates](Images/ssKeys.png)
+![Certificates](ssKeys.png)
 
 At this point, you're all set to start using Sinch and push notifications. Let's take a look at some of the things SinchService can do for us.
 
