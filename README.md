@@ -24,6 +24,8 @@ Once you've generated the certificates, upload them to your Sinch dashboard for 
 
 ![Certs](Images/ssKeys.PNG)
 
+Note: In order to make this app work with iOS 8, you will also need to add a certificate for VoIP services.
+
 At this point, you're all set to start using Sinch and push notifications. Let's take a look at some of the things SinchService can do for us.
 
 ##SinchService - Why use it?
