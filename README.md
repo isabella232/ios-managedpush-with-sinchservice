@@ -4,6 +4,8 @@ At Sinch, we've been fortunate to not only provide an intuitive API, but also co
 
 In this tutorial, we'll take a look at the SinchService and talk about some best practices and how to use it.
 
+![Certs](Images/pushImage.png)
+
 ##Getting Started
 To get started with this tutorial, be sure to download the starter project [here](https://www.sinch.com/downloads/#downloads-ios). The SDK comes packaged with a few sample projects, but the one we are interested in is called "SinchCallingPushWithService". Note that if you already have a project using the Sinch SDK, you can use that as well. 
 
