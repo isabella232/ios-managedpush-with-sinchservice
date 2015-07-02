@@ -4,7 +4,7 @@ At Sinch, we've been fortunate not only to provide an intuitive API, but also co
 
 In this tutorial, we'll take a look at the SinchService, discuss some best practices, and explain how to use it.
 
-![Certs](Images/pushImage.png)
+![push notifications](Images/pushImage-small.png)
 
 ##Getting started
 To get started with this tutorial, be sure to [download the starter project] (https://www.sinch.com/downloads/#downloads-ios). The SDK comes packaged with a few sample projects, but the one we are interested in is called "SinchCallingPushWithService". Note that if you already have a project using the Sinch SDK, you can use that as well. 
@@ -12,36 +12,36 @@ To get started with this tutorial, be sure to [download the starter project] (ht
 ####CocoaPods
 Next, install the SinchService via [CocoaPods](https://cocoapods.org/). If you are unfamiliar with CocoaPods, don't worry; you can set up everything by following these steps:
 
-- **If you've never installed Cocoapods**, open terminal and first update RubyGems to ensure you have the latest version using this command: "sudo gem update --system". 
-- Next, install Cocoapods: "sudo gem install cocoapods".
-- Now, navigate to your project's folder using the "cd" command.
-- We've included a pod file for you already, so just run "pod install" and you'll be all set.
+- **If you've never installed Cocoapods**, open terminal and first update RubyGems to ensure you have the latest version using this command: `sudo gem update --system`. 
+- Next, install Cocoapods: `sudo gem install cocoapods`.
+- Now, navigate to your project's folder using the `cd` command.
+- We've included a pod file for you already, so just run `pod install` and you'll be all set.
 
-You can also add more libraries to the pod file as well. Once you've navigated to where the podfile is, use this command: "open -a Xcode Podfile".
+You can also add more libraries to the pod file as well. Once you've navigated to where the podfile is, use this command: `open -a Xcode Podfile`.
 
 ####Push Notification Certificates
 No matter if you are using the sample app or one of your own, you'll need to have push notifications enabled. If you haven't done this before, you'll want to follow the guide created by Apple [here](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringPushNotifications/ConfiguringPushNotifications.html).  
 
-Note that if you don't include certificates for VoiP services or user Pushkit, the legacy push notifications will still function just fine.
+Note that if you don't include certificates for VoIP services or user Pushkit, the legacy push notifications will still function just fine.
 
 Once you've generated the certificates, upload them to your Sinch dashboard for the application you're working with. All three push notifications certificate types are supported:
 
-![Certs](Images/ssKeys.PNG)
+![push Certificates](Images/ssKeys.PNG)
 
 At this point, you're ready to start using Sinch and push notifications. Let's take a look at some of the things SinchService can do for us.
 
 ##SinchService - Why use it?
-At its core, SinchService acts as a supplement to the Sinch API. If you are familiar with our API already, it specifically bolsters both SinchRTC and SINClient. With it, you can set up all the events for calls, use notification center to listen for those events anywhere you need, handle local or remote notifications, and even implement messaging.
+At its core, SinchService acts as a supplement to the Sinch API. If you are familiar with our API already, it specifically bolsters both **SinchRTC** and **SINClient**. With it, you can set up all the events for calls, use notification center to listen for those events anywhere you need, handle local or remote notifications, and even implement messaging.
 
 For example, the `SINClient` is the main entry point to interact with our API. When your app leverages several of our features, you may have a class that conforms to several protocols. 
 
 Say your app is using our API to enable calling and push notifications. If you implement your client on the AppDelegate, as we have in several code samples, your implementation file may look something like this:
 
-    @interface AppDelegate () <SINClientDelegate, SINCallClientDelegate, SINManagedPushDelegate>
+	@interface AppDelegate () <SINClientDelegate, SINCallClientDelegate, SINManagedPushDelegate>
 
 While that certainly works, SinchService makes this more concise. There are essentially three main responsibilities here, and right now they are going to be spread across the AppDelegate. In addition, to properly support push notifications an instance of `SINManagedPush` is necessary as well:
 
-`@property (nonatomic, readwrite, strong) id<SINManagedPush> push;`
+	@property (nonatomic, readwrite, strong) id<SINManagedPush> push;
 
 SinchService can take care of a lot of this setup for you. Since it houses most of the Sinch API functionality, we can rely on one focused object to to handle important events and do the necessary setup. As you'll see, SinchService has a several helpful properties that can help with these tasks, such as the previously mentioned `SINManagePush`.
 
@@ -139,7 +139,7 @@ You'll also want to be able to handle incoming remote notifications. SinchServic
 }
 ```
 
-Now, you can interact with `SINManagedPush` easily since it lives as a property on your SinchService instance. You can manage incoming notifications, receiving a token, and more using SinchService. Remember, SinchService  can handle remote, local, and VoiP notifications.
+Now, you can interact with `SINManagedPush` easily since it lives as a property on your SinchService instance. You can manage incoming notifications, receiving a token, and more using SinchService. Remember, SinchService can handle remote, local, and VoIP notifications.
 
 ##Wrapping Up
 Hopefully you'll get some good use out of SinchService. It's been tuned to make your experience with our API as seamless as possible. It abstracts a lot of what `SINClient` does and makes working with `SINManagedPush` easier as well. Whether it's calling, messaging, or notifications you are looking to implement - SinchService can help with any of them.
