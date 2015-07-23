@@ -1,4 +1,4 @@
-#Introducing SinchService
+#iOS Push Notifications using SinchService
 
 At Sinch, we've been fortunate not only to provide an intuitive API, but also contribute to the open source community around it. Part of that initiative is the SinchService for iOS. With it, we've abstracted a lot of the heavy lifting and common functionality away so you can get started with Sinch as fast as possible.
 
