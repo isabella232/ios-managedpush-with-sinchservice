@@ -20,7 +20,7 @@ Next, install the SinchService via [CocoaPods](https://cocoapods.org/). If you a
 You can also add more libraries to the pod file as well. Once you've navigated to where the podfile is, use this command: `open -a Xcode Podfile`.
 
 ####Push notification certificates
-No matter if you are using the sample app or one of your own, you'll need to have push notifications enabled. If you haven't done this before, you'll want to follow the [guide created by Apple](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringPushNotifications/ConfiguringPushNotifications.html).  
+No matter if you are using the sample app or one of your own, you'll need to have push notifications enabled. If you haven't done this before, you'll want to follow the [guide created by Apple](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html).  
 
 Note that if you don't include certificates for VoIP services or user Pushkit, the legacy push notifications will still function just fine.
 
